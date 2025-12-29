@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\devipavithra\\dotnet\\AgrimanAPI\\AgrimanAPI\\AgrimanAPI.csproj": {}
+    "D:\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\devipavithra\\dotnet\\AgrimanAPI\\AgrimanAPI\\AgrimanAPI.csproj": {
+    "D:\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\devipavithra\\dotnet\\AgrimanAPI\\AgrimanAPI\\AgrimanAPI.csproj",
+        "projectUniqueName": "D:\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj",
         "projectName": "AgrimanAPI",
-        "projectPath": "C:\\Users\\Dell\\devipavithra\\dotnet\\AgrimanAPI\\AgrimanAPI\\AgrimanAPI.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\devipavithra\\dotnet\\AgrimanAPI\\AgrimanAPI\\obj\\",
+        "projectPath": "D:\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj",
+        "packagesPath": "C:\\Users\\Arffy Technologies\\.nuget\\packages\\",
+        "outputPath": "D:\\Agriman_API\\AgrimanAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Arffy Technologies\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -51,6 +51,20 @@
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[10.0.1, )"
             }

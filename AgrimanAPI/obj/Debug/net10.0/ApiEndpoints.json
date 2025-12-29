@@ -1,0 +1,228 @@
+[
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.PackingController",
+    "Method": "GetAll",
+    "RelativePath": "api/packing",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.PackingController",
+    "Method": "Create",
+    "RelativePath": "api/packing",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "packingDto",
+        "Type": "AgrimanAPI.Api.DTOs.PackingDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.PackingController",
+    "Method": "CreateDetail",
+    "RelativePath": "api/packing/detail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "detailDto",
+        "Type": "AgrimanAPI.Api.DTOs.PackingDetailDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.ProfitLossController",
+    "Method": "Calculate",
+    "RelativePath": "api/profit-loss/calculate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AgrimanAPI.Api.DTOs.ProfitLossRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.ProfitLossController",
+    "Method": "GetInfo",
+    "RelativePath": "api/profit-loss/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionThingsController",
+    "Method": "Create",
+    "RelativePath": "api/transaction-things",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AgrimanAPI.DTOs.TransactionThingsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionThingsController",
+    "Method": "GetAll",
+    "RelativePath": "api/transaction-things",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionThingsController",
+    "Method": "GetById",
+    "RelativePath": "api/transaction-things/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionThingsController",
+    "Method": "Update",
+    "RelativePath": "api/transaction-things/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "AgrimanAPI.Api.DTOs.TransactionThingsUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionThingsController",
+    "Method": "Delete",
+    "RelativePath": "api/transaction-things/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionWorkDetailsController",
+    "Method": "Create",
+    "RelativePath": "api/transaction-work-details",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AgrimanAPI.Api.DTOs.TransactionWorkDetailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionWorkDetailsController",
+    "Method": "GetAll",
+    "RelativePath": "api/transaction-work-details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionWorkDetailsController",
+    "Method": "GetById",
+    "RelativePath": "api/transaction-work-details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionWorkDetailsController",
+    "Method": "Update",
+    "RelativePath": "api/transaction-work-details/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "AgrimanAPI.Api.DTOs.TransactionWorkDetailUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.TransactionWorkDetailsController",
+    "Method": "Delete",
+    "RelativePath": "api/transaction-work-details/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

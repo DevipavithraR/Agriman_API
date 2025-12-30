@@ -20,12 +20,14 @@ builder.Services.AddScoped<ITransactionThingsRepository, TransactionThingsReposi
 builder.Services.AddScoped<ITransactionWorkDetailRepository, TransactionWorkDetailRepository>();
 builder.Services.AddScoped<IMasterWorkNames, MasterWorkNameRepository>();
 builder.Services.AddScoped<IMasterPacking, MasterPackingRepository>();
+builder.Services.AddScoped<IMasterThings, MasterThingsRepository>();
 
 // Services
 builder.Services.AddScoped<TransactionThingsService>();
 builder.Services.AddScoped<TransactionWorkDetailService>();
 builder.Services.AddScoped<MasterWorkNameService>();
 builder.Services.AddScoped<MasterPackingService>();
+builder.Services.AddScoped<MasterThingsService>();
 
 builder.Services.AddScoped<IPackingRepository, PackingRepository>();
 builder.Services.AddScoped<IPackingService, PackingService>();

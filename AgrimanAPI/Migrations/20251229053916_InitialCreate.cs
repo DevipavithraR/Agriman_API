@@ -40,28 +40,12 @@ namespace AgrimanAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "packing_transactions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PackingId = table.Column<int>(type: "int", nullable: false),
-                    PackingName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NumberOfUnits = table.Column<int>(type: "int", nullable: false),
-                    UnitAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_packing_transactions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Packings",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PackingName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PackingName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Unit = table.Column<int>(type: "int", nullable: false),
                     UnitAmount = table.Column<int>(type: "int", nullable: false)
                 },
@@ -71,54 +55,7 @@ namespace AgrimanAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PackingsEntity",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PackingName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Unit = table.Column<int>(type: "int", nullable: false),
-                    UnitAmount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PackingsEntity", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "profit_loss",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WorkId = table.Column<int>(type: "int", nullable: false),
-                    ThingsId = table.Column<int>(type: "int", nullable: false),
-                    PackingId = table.Column<int>(type: "int", nullable: false),
-                    WorkTotalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ThingsTotalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PackingTotalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ProfitOrLoss = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_profit_loss", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ThingsEntity",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ThingsName = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ThingsEntity", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TransactionThingsDetails",
+                name: "transaction_things_details",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -126,27 +63,11 @@ namespace AgrimanAPI.Migrations
                     things_id = table.Column<int>(type: "int", nullable: false),
                     things_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     thing_quantity = table.Column<int>(type: "int", nullable: false),
-                    amount_spend = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    amount_spend = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TransactionThingsDetails", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TransactionWorkDetails",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WorkId = table.Column<int>(type: "int", nullable: false),
-                    WorkName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WorkersCount = table.Column<int>(type: "int", nullable: false),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TransactionWorkDetails", x => x.Id);
+                    table.PrimaryKey("PK_transaction_things_details", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
@@ -184,7 +105,7 @@ namespace AgrimanAPI.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "PackingsEntity",
+                table: "Packings",
                 columns: new[] { "Id", "PackingName", "Unit", "UnitAmount" },
                 values: new object[,]
                 {
@@ -203,25 +124,10 @@ namespace AgrimanAPI.Migrations
                 name: "AgriWorks");
 
             migrationBuilder.DropTable(
-                name: "packing_transactions");
-
-            migrationBuilder.DropTable(
                 name: "Packings");
 
             migrationBuilder.DropTable(
-                name: "PackingsEntity");
-
-            migrationBuilder.DropTable(
-                name: "profit_loss");
-
-            migrationBuilder.DropTable(
-                name: "ThingsEntity");
-
-            migrationBuilder.DropTable(
-                name: "TransactionThingsDetails");
-
-            migrationBuilder.DropTable(
-                name: "TransactionWorkDetails");
+                name: "transaction_things_details");
         }
     }
 }

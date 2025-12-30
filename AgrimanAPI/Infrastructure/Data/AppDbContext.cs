@@ -19,7 +19,6 @@ namespace AgrimanAPI.Infrastructure.Data
         public DbSet<TransactionThingsEntity> TransactionThingsEntity { get; set; }
         public DbSet<TransactionWorkDetailEntity> TransactionWorkDetails { get; set; }
         public DbSet<PackingDetail> PackingTransactions { get; set; }
-        public DbSet<Packing> Packings { get; set; }
 
         public DbSet<ProfitLossEntity> ProfitLossDetails { get; set; }
        

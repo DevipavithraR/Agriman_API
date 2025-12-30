@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgrimanAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+878a5381325f57ec8ba07c2ae0887ff690c406e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4255d1faeaec6f9d86c38bbd5d4c254e4712b91f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgrimanAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgrimanAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

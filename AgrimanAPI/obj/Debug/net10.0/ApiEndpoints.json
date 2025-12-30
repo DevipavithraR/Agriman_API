@@ -28,24 +28,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "packingDto",
-        "Type": "AgrimanAPI.Api.DTOs.PackingDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AgrimanAPI.Api.Controllers.PackingController",
-    "Method": "CreateDetail",
-    "RelativePath": "api/packing/detail",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "detailDto",
-        "Type": "AgrimanAPI.Api.DTOs.PackingDetailDto",
+        "Name": "dto",
+        "Type": "AgrimanAPI.Api.DTOs.PackingCreateDto",
         "IsRequired": true
       }
     ],
@@ -81,16 +65,6 @@
     "ContainingType": "AgrimanAPI.Api.Controllers.ProfitLossController",
     "Method": "GetInfo",
     "RelativePath": "api/profit-loss/get",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AgrimanAPI.Api.Controllers.MasterThingsController",
-    "Method": "GetAll",
-    "RelativePath": "api/things/details",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

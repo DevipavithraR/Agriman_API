@@ -14,31 +14,22 @@ namespace AgrimanAPI.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Packing>> GetAllAsync()
+        public async Task<List<PackingDetail>> GetAllAsync()
         {
-            return await _context.Packings.ToListAsync();
+            return await _context.PackingTransactions.ToListAsync();
         }
 
-        public async Task AddAsync(Packing packing)
-        {
-            _context.Packings.Add(packing);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task AddDetailAsync(PackingDetail packingDetail)
+        public async Task<PackingDetail> AddAsync(PackingDetail packingDetail)
         {
             _context.PackingTransactions.Add(packingDetail);
             await _context.SaveChangesAsync();
+            return packingDetail;
         }
 
-        public async Task<bool> ExistsAsync(int packingId)
+       
+        public async Task<PackingEntity?> GetPackingByIdAsync(int packingId)
         {
-            return await _context.Packings.AnyAsync(p => p.Id == packingId);
-        }
-
-        public async Task<Packing?> GetByIdAsync(int packingId)
-        {
-            return await _context.Packings.FindAsync(packingId);
+            return await _context.PackingsEntity.FindAsync(packingId);
         }
     }
 }

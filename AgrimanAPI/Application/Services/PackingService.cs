@@ -4,7 +4,7 @@ using AgrimanAPI.Infrastructure.Entities;
 
 namespace AgrimanAPI.Application.Services
 {
-    public class PackingService : IPackingService
+    public class PackingService
     {
         private readonly IPackingRepository _repository;
 
@@ -13,56 +13,34 @@ namespace AgrimanAPI.Application.Services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Packing>> GetAllAsync()
+        public Task<List<PackingDetail>> GetAllAsync()
+            => _repository.GetAllAsync();
+        public async Task<PackingDetail> CreateAsync(int packingId, int numberOfUnits)
         {
-            return (IEnumerable<Packing>)await _repository.GetAllAsync();
-        }
-
-        public async Task AddAsync(PackingDto packingDto)
-        {
-            // Validation
-            if (string.IsNullOrWhiteSpace(packingDto.PackingName))
-                throw new ArgumentException("Packing name is required");
-            if (packingDto.UnitAmount <= 0)
-                throw new ArgumentException("UnitAmount must be greater than 0");
-
-            // Map DTO → Entity
-            var packing = new Packing
-            {
-                PackingName = packingDto.PackingName,
-                Unit = packingDto.Unit,
-                UnitAmount = packingDto.UnitAmount
-            };
-
-            await _repository.AddAsync(packing);
-        }
-
-        public async Task AddDetailAsync(PackingDetailDto detailDto)
-        {
-            if (detailDto.NumberOfUnits <= 0)
+            if (numberOfUnits <= 0)
                 throw new ArgumentException("NumberOfUnits must be greater than 0");
 
-            // Get the master Packing
-            var packing = await _repository.GetByIdAsync(detailDto.PackingId);
-            if (packing == null)
+            // ✅ Get MASTER packing
+            var packingMaster = await _repository.GetPackingByIdAsync(packingId);
+            if (packingMaster == null)
                 throw new Exception("PackingId does not exist");
 
-            // Calculate UnitAmount
-            float calculatedAmount = packing.UnitAmount * detailDto.NumberOfUnits;
+            // ✅ Calculate
+            float totalAmount = packingMaster.UnitAmount * numberOfUnits;
 
-            // Map DTO → Entity
+            // ✅ Create TRANSACTION
             var detail = new PackingDetail
             {
-                PackingId = detailDto.PackingId,
-                PackingName = packing.PackingName,
-                NumberOfUnits = detailDto.NumberOfUnits,
-                UnitAmount = calculatedAmount
+                PackingId = packingMaster.Id,
+                PackingName = packingMaster.PackingName,
+                NumberOfUnits = numberOfUnits,
+                UnitAmount = totalAmount
             };
 
-            await _repository.AddDetailAsync(detail);
+            // ✅ Save transaction
+            return await _repository.AddAsync(detail);
         }
 
-       
     }
 }
 

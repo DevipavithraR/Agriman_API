@@ -37,18 +37,6 @@
         }
       }
     },
-    "/api/things/details": {
-      "get": {
-        "tags": [
-          "MasterThings"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/packing": {
       "get": {
         "tags": [
@@ -68,49 +56,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PackingDto"
+                "$ref": "#/components/schemas/PackingCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PackingDto"
+                "$ref": "#/components/schemas/PackingCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PackingDto"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/packing/detail": {
-      "post": {
-        "tags": [
-          "Packing"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PackingDetailDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PackingDetailDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PackingDetailDto"
+                "$ref": "#/components/schemas/PackingCreateDto"
               }
             }
           },
@@ -448,7 +404,7 @@
   },
   "components": {
     "schemas": {
-      "PackingDetailDto": {
+      "PackingCreateDto": {
         "type": "object",
         "properties": {
           "packingId": {
@@ -458,46 +414,8 @@
               "string"
             ],
             "format": "int32"
-          },
-          "packingName": {
-            "type": [
-              "null",
-              "string"
-            ]
           },
           "numberOfUnits": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          }
-        }
-      },
-      "PackingDto": {
-        "type": "object",
-        "properties": {
-          "packingId": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "packingName": {
-            "type": "string"
-          },
-          "unit": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "unitAmount": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",
@@ -669,9 +587,6 @@
     },
     {
       "name": "MasterPacking"
-    },
-    {
-      "name": "MasterThings"
     },
     {
       "name": "Packing"

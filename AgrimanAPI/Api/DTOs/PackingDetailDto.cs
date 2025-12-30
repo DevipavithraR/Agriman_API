@@ -1,8 +1,8 @@
-﻿namespace AgrimanAPI.Api.DTOs;
-
-public class PackingDetailDto
+﻿namespace AgrimanAPI.Api.DTOs
 {
-    public int PackingId { get; set; }
-    public string? PackingName { get; set; } // optional
-    public int NumberOfUnits { get; set; }
+    public class PackingCreateDto
+    {
+        public int PackingId { get; set; }
+        public int NumberOfUnits { get; set; }
+    }
 }

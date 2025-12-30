@@ -3543,23 +3543,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {},
+    "C:\\Users\\Arffy Technologies\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Pictures\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj",
+      "projectUniqueName": "D:\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj",
       "projectName": "AgrimanAPI",
-      "projectPath": "C:\\Users\\Dell\\Pictures\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Pictures\\Agriman_API\\AgrimanAPI\\obj\\",
+      "projectPath": "D:\\Agriman_API\\AgrimanAPI\\AgrimanAPI.csproj",
+      "packagesPath": "C:\\Users\\Arffy Technologies\\.nuget\\packages\\",
+      "outputPath": "D:\\Agriman_API\\AgrimanAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Arffy Technologies\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

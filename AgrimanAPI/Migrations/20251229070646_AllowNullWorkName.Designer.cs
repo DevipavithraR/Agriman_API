@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgrimanAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251230162658_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20251229070646_AllowNullWorkName")]
+    partial class AllowNullWorkName
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -176,71 +176,6 @@ namespace AgrimanAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.MasterThingsEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ThingsName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ThingsEntity");
-                });
-
-            modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.Packing", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("PackingName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Unit")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UnitAmount")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Packings");
-                });
-
-            modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.PackingDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("NumberOfUnits")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PackingId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PackingName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("UnitAmount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("packing_transactions", (string)null);
-                });
-
             modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.PackingEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -261,7 +196,7 @@ namespace AgrimanAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PackingsEntity");
+                    b.ToTable("Packings");
 
                     b.HasData(
                         new
@@ -280,40 +215,6 @@ namespace AgrimanAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.ProfitLossEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("PackingId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("PackingTotalAmount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("ProfitOrLoss")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("ThingsId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ThingsTotalAmount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("WorkId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("WorkTotalAmount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("profit_loss", (string)null);
-                });
-
             modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.TransactionThingsEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -322,8 +223,8 @@ namespace AgrimanAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("AmountSpend")
-                        .HasColumnType("decimal(18,2)")
+                    b.Property<float>("AmountSpend")
+                        .HasColumnType("real")
                         .HasColumnName("amount_spend");
 
                     b.Property<int>("ThingQuantity")
@@ -341,7 +242,7 @@ namespace AgrimanAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransactionThingsDetails", (string)null);
+                    b.ToTable("transaction_things_details");
                 });
 
             modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.TransactionWorkDetailEntity", b =>
@@ -366,7 +267,7 @@ namespace AgrimanAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransactionWorkDetails", (string)null);
+                    b.ToTable("Transaction_Work_Details");
                 });
 #pragma warning restore 612, 618
         }

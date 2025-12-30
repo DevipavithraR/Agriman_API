@@ -22,7 +22,7 @@ namespace AgrimanAPI.Infrastructure.Repositories
             await _context.AgriThings.AnyAsync(x => x.Id == thingsId);
 
         public async Task<bool> PackingExistsAsync(int packingId) =>
-            await _context.Packings.AnyAsync(x => x.Id == packingId);
+            await _context.PackingTransactions.AnyAsync(x => x.Id == packingId);
 
         public async Task<decimal> GetWorkTotalAsync(int workId) =>
             await _context.TransactionWorkDetails

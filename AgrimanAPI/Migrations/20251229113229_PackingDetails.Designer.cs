@@ -3,6 +3,7 @@ using AgrimanAPI.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AgrimanAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251229113229_PackingDetails")]
+    partial class PackingDetails
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -173,23 +176,6 @@ namespace AgrimanAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.MasterThingsEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ThingsName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ThingsEntity");
-                });
-
             modelBuilder.Entity("AgrimanAPI.Infrastructure.Entities.Packing", b =>
                 {
                     b.Property<int>("Id")
@@ -284,9 +270,6 @@ namespace AgrimanAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("PackingId")
-                        .HasColumnType("int");
 
                     b.Property<decimal>("PackingTotalAmount")
                         .HasColumnType("decimal(18,2)");

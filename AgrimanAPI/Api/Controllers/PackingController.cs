@@ -1,7 +1,8 @@
 ﻿
 using AgrimanAPI.Api.DTOs;
-using Microsoft.AspNetCore.Mvc;
 using AgrimanAPI.Application.Ports;
+using AgrimanAPI.Application.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgrimanAPI.Api.Controllers
 {
@@ -9,9 +10,9 @@ namespace AgrimanAPI.Api.Controllers
     [Route("api/packing")]
     public class PackingController : ControllerBase
     {
-        private readonly IPackingService _service;
+        private readonly PackingService _service;
 
-        public PackingController(IPackingService service)
+        public PackingController(PackingService service)
         {
             _service = service;
         }
@@ -19,24 +20,18 @@ namespace AgrimanAPI.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _service.GetAllAsync();
-            return Ok(result);
+            return Ok(await _service.GetAllAsync());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] PackingDto packingDto)
+        public async Task<IActionResult> Create([FromBody] PackingCreateDto dto)
         {
-            await _service.AddAsync(packingDto);
-            return Ok(new { message = "Packing created successfully" });
+            var result = await _service.CreateAsync(dto.PackingId, dto.NumberOfUnits);
+            return Ok(result);
         }
 
-        [HttpPost("detail")]
-        public async Task<IActionResult> CreateDetail([FromBody] PackingDetailDto detailDto)
-        {
-            await _service.AddDetailAsync(detailDto);
-            return Ok(new { message = "Packing detail created successfully" });
-        }
     }
+
 }
 
 

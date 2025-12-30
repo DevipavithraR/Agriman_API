@@ -26,7 +26,7 @@ namespace AgrimanAPI.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Master tables
+            //Master tables
             //modelBuilder.Entity<AgriWorkEntity>()
             //    .ToTable("work_details")
             //    .Property(p => p.Amount).HasColumnType("decimal(18,2)");

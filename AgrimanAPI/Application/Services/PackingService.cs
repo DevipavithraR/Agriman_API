@@ -15,7 +15,7 @@ namespace AgrimanAPI.Application.Services
 
         public async Task<IEnumerable<Packing>> GetAllAsync()
         {
-            return await _repository.GetAllAsync();
+            return (IEnumerable<Packing>)await _repository.GetAllAsync();
         }
 
         public async Task AddAsync(PackingDto packingDto)
@@ -61,6 +61,8 @@ namespace AgrimanAPI.Application.Services
 
             await _repository.AddDetailAsync(detail);
         }
+
+       
     }
 }
 

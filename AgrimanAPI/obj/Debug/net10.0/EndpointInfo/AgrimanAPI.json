@@ -13,6 +13,30 @@
     }
   ],
   "paths": {
+    "/api/master-workname": {
+      "get": {
+        "tags": [
+          "MasterName"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/packing/get-pack": {
+      "get": {
+        "tags": [
+          "MasterPacking"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/packing": {
       "get": {
         "tags": [
@@ -440,17 +464,20 @@
         }
       },
       "PackingDto": {
-        "required": [
-          "packingName"
-        ],
         "type": "object",
         "properties": {
+          "packingId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
           "packingName": {
             "type": "string"
           },
           "unit": {
-            "maximum": 2147483647,
-            "minimum": 1,
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",
@@ -459,8 +486,6 @@
             "format": "int32"
           },
           "unitAmount": {
-            "maximum": 2147483647,
-            "minimum": 1,
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",
@@ -627,6 +652,12 @@
     }
   },
   "tags": [
+    {
+      "name": "MasterName"
+    },
+    {
+      "name": "MasterPacking"
+    },
     {
       "name": "Packing"
     },

@@ -18,10 +18,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Repositories
 builder.Services.AddScoped<ITransactionThingsRepository, TransactionThingsRepository>();
 builder.Services.AddScoped<ITransactionWorkDetailRepository, TransactionWorkDetailRepository>();
+builder.Services.AddScoped<IMasterWorkNames, MasterWorkNameRepository>();
+builder.Services.AddScoped<IMasterPacking, MasterPackingRepository>();
 
 // Services
 builder.Services.AddScoped<TransactionThingsService>();
 builder.Services.AddScoped<TransactionWorkDetailService>();
+builder.Services.AddScoped<MasterWorkNameService>();
+builder.Services.AddScoped<MasterPackingService>();
 
 builder.Services.AddScoped<IPackingRepository, PackingRepository>();
 builder.Services.AddScoped<IPackingService, PackingService>();

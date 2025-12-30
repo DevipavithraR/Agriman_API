@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "AgrimanAPI.Api.Controllers.MasterNameController",
+    "Method": "GetAll",
+    "RelativePath": "api/master-workname",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AgrimanAPI.Api.Controllers.PackingController",
     "Method": "GetAll",
     "RelativePath": "api/packing",
@@ -39,6 +49,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AgrimanAPI.Api.Controllers.MasterPackingController",
+    "Method": "GetAll",
+    "RelativePath": "api/packing/get-pack",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

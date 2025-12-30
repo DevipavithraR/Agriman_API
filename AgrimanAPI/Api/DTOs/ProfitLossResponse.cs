@@ -1,9 +1,4 @@
-﻿using AgrimanAPI.Api.DTOs;
-using AgrimanAPI.Application.Ports;
-using AgrimanAPI.Domain;
-
-
-namespace AgrimanAPI.Api.DTOs
+﻿namespace AgrimanAPI.Api.DTOs
 {
     public class ProfitLossResponse
     {
@@ -11,9 +6,6 @@ namespace AgrimanAPI.Api.DTOs
         public decimal ThingsTotalAmount { get; set; }
         public decimal PackingTotalAmount { get; set; }
         public decimal ProfitOrLoss { get; set; }
-        public string? Status { get; set; } // PROFIT / LOSS / BREAK EVEN
+        public string? Status { get; set; }
     }
-
 }
-
-

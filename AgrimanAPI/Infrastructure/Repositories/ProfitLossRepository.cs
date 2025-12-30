@@ -21,31 +21,33 @@ namespace AgrimanAPI.Infrastructure.Repositories
         public async Task<bool> ThingsExistsAsync(int thingsId) =>
             await _context.AgriThings.AnyAsync(x => x.Id == thingsId);
 
+        public async Task<bool> PackingExistsAsync(int packingId) =>
+            await _context.Packings.AnyAsync(x => x.Id == packingId);
+
         public async Task<decimal> GetWorkTotalAsync(int workId) =>
             await _context.TransactionWorkDetails
                 .Where(x => x.WorkId == workId)
-                .SumAsync(x => x.Amount);
+                .SumAsync(x => (decimal?)x.Amount) ?? 0;
 
-        public async Task<decimal> GetThingsTotalAsync(int thingsId)
-        {
-            return (decimal)await _context.TransactionThingsEntity
-              .Where(x => x.ThingsId == thingsId)
-         .SumAsync(x => x.AmountSpend);
-        }
+        public async Task<decimal> GetThingsTotalAsync(int thingsId) =>
+            await _context.TransactionThingsEntity
+                .Where(x => x.ThingsId == thingsId)
+                .SumAsync(x => (decimal?)x.AmountSpend) ?? 0;
 
-        public async Task<decimal> GetPackingTotalAsync(int workId)
-        {
-            return (decimal)await _context.PackingTransactions
-                .Where(x => x.WorkId == workId)
-                .SumAsync(x => x.NumberOfUnits * x.UnitAmount);
-        }
+        public async Task<decimal> GetPackingTotalAsync(int packingId) =>
+            await _context.PackingTransactions
+                 .Where(x => x.PackingId == packingId)
+                 .SumAsync(x => (decimal?)(x.NumberOfUnits * x.UnitAmount)) ?? 0;
 
-        public async Task SaveAsync(AgrimanAPI.Domain.ProfitLoss profitLoss)
+
+
+        public async Task SaveAsync(ProfitLoss profitLoss)
         {
             var entity = new ProfitLossEntity
             {
                 WorkId = profitLoss.WorkId,
                 ThingsId = profitLoss.ThingsId,
+                PackingId = profitLoss.PackingId,
                 WorkTotalAmount = profitLoss.WorkTotal,
                 ThingsTotalAmount = profitLoss.ThingsTotal,
                 PackingTotalAmount = profitLoss.PackingTotal,

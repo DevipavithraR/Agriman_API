@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using AgrimanAPI.Application.Services;
+﻿using AgrimanAPI.Application.Services;
 using AgrimanAPI.Api.DTOs;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgrimanAPI.Api.Controllers
 {
     [ApiController]
-    [Route("api/profit-loss")] // base route
+    [Route("api/profit-loss")]
     public class ProfitLossController : ControllerBase
     {
         private readonly ProfitLossService _service;
@@ -15,26 +15,14 @@ namespace AgrimanAPI.Api.Controllers
             _service = service;
         }
 
-        // GET api/profit-loss
-        [HttpGet]
-        [Route("get")]
-        public IActionResult GetInfo()
-        {
-            return Ok("ProfitLoss API is running");
-        }
+        [HttpGet("get")]
+        public IActionResult GetInfo() => Ok("ProfitLoss API is running");
 
-        // POST api/profit-loss/calculate
         [HttpPost("calculate")]
         public async Task<IActionResult> Calculate([FromBody] ProfitLossRequest request)
         {
-            var result = await _service.CalculateAsync(
-                request.WorkId,
-                request.ThingsId,
-                request.PackingId
-            );
-
+            var result = await _service.CalculateAsync(request.WorkId, request.ThingsId, request.PackingId);
             return Ok(result);
         }
     }
-
 }

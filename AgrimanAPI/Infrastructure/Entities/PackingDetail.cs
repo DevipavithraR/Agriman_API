@@ -7,7 +7,7 @@
         public required string PackingName { get; set; }
         public int NumberOfUnits { get; set; }
         public float UnitAmount { get; set; }    // <-- Add this line
-        public int WorkId { get; internal set; }
+        
     }
 }
 

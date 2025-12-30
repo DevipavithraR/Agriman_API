@@ -12,6 +12,7 @@ namespace AgrimanAPI.Infrastructure.Entities
         public int WorkId { get; set; }
 
         public int ThingsId { get; set; }
+
         public int PackingId { get; set; }
 
 

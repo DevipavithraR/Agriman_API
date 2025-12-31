@@ -72,6 +72,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AgrimanAPI.Api.Controllers.MasterThingsController",
+    "Method": "GetAll",
+    "RelativePath": "api/things-details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AgrimanAPI.Api.Controllers.TransactionThingsController",
     "Method": "Create",
     "RelativePath": "api/transaction-things",

@@ -21,6 +21,8 @@ builder.Services.AddScoped<ITransactionWorkDetailRepository, TransactionWorkDeta
 builder.Services.AddScoped<IMasterWorkNames, MasterWorkNameRepository>();
 builder.Services.AddScoped<IMasterPacking, MasterPackingRepository>();
 builder.Services.AddScoped<IPackingRepository, PackingRepository>();
+builder.Services.AddScoped<IMasterThings, MasterThingsRepository>();
+
 
 
 // Services
@@ -29,6 +31,8 @@ builder.Services.AddScoped<TransactionWorkDetailService>();
 builder.Services.AddScoped<MasterWorkNameService>();
 builder.Services.AddScoped<MasterPackingService>();
 builder.Services.AddScoped<PackingService>();
+builder.Services.AddScoped<MasterThingsService>();
+
 
 // Dependency Injection
 builder.Services.AddScoped<IProfitLossRepository, ProfitLossRepository>();

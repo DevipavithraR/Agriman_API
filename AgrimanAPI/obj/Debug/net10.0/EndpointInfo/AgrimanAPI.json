@@ -37,6 +37,18 @@
         }
       }
     },
+    "/api/things-details": {
+      "get": {
+        "tags": [
+          "MasterThings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/packing": {
       "get": {
         "tags": [
@@ -587,6 +599,9 @@
     },
     {
       "name": "MasterPacking"
+    },
+    {
+      "name": "MasterThings"
     },
     {
       "name": "Packing"
